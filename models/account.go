@@ -3,22 +3,22 @@ package models
 import "time"
 
 type Account struct {
-	ID        int64
-	Owner     string
-	Balance   int64
-	Currency  string
+	ID        int64     `json:"id"`
+	Owner     string    `json:"owner"`
+	Balance   int64     `json:"balance"`
+	Currency  string    `json:"currency"`
 	CreatedAt time.Time `db:"created_at"`
 }
 
 type CreateAccountParams struct {
-	Owner    string
-	Balance  int64
-	Currency string
+	Owner    string `json:"owner"`
+	Balance  int64  `json:"balance"`
+	Currency string `json:"currency"`
 }
 
 type UpdateAccountParams struct {
-	ID      int64
-	Balance int64
+	ID      int64 `json:"id"`
+	Balance int64 `json:"balance"`
 }
 
 type ListAccountsParams struct {

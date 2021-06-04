@@ -110,7 +110,9 @@ func (q *Queries) ListAccounts(ctx context.Context, arg models.ListAccountsParam
 		return nil, err
 	}
 	defer rows.Close()
+
 	items := []models.Account{}
+
 	for rows.Next() {
 		var i models.Account
 		if err := rows.Scan(
