@@ -12,10 +12,10 @@ import (
 )
 
 func createRandomAccount(t *testing.T) models.Account {
-	// user := createRandomUser(t)
+	user := createRandomUser(t)
 
 	arg := models.CreateAccountParams{
-		Owner:    util.RandomOwner(),
+		Owner:    user.Username,
 		Balance:  util.RandomMoney(),
 		Currency: util.RandomCurrency(),
 	}

@@ -22,7 +22,10 @@ func main() {
 	}
 
 	store := controllers.NewStore(conn)
-	server := api.NewServer(store)
+	server, err := api.NewServer(store)
+	if err != nil {
+		log.Fatal("sth went wrong %w", err)
+	}
 
 	err = server.Start(config.ServerAddress)
 	if err != nil {
